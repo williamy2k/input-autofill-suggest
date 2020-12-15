@@ -16,5 +16,5 @@ Include the CSS in `<head>` (optional, you could adapt your own styles based on 
 
 Include at the end of `<body>`:
 
-    <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>`
-    <script src="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.js"></script>`
+    <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.js"></script>
