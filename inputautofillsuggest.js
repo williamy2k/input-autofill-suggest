@@ -11,7 +11,7 @@ document.querySelectorAll('.autoBox').forEach(autoBox => {
       autoBox.children[0].value = option;
     });
     listItem.addEventListener('mouseup', function () {
-      autoBox.children[0].blur();
+      if(autoBox.children[1].getBoundingClientRect().height == 210) autoBox.children[0].blur();
     });
     list.appendChild(listItem);
   });
@@ -38,9 +38,10 @@ document.querySelectorAll('.autoBox').forEach(autoBox => {
       listItem.addEventListener('mousedown', function (e) {
         e.preventDefault();
         autoBox.children[0].value = weightedOption.target;
+        autoBox.keyup();
       });
       listItem.addEventListener('mouseup', function () {
-        autoBox.children[0].blur();
+        if (autoBox.children[1].getBoundingClientRect().height == 210) autoBox.children[0].blur();
       });
       reorderedList.appendChild(listItem);
     });
