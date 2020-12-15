@@ -38,7 +38,6 @@ document.querySelectorAll('.autoBox').forEach(autoBox => {
       listItem.addEventListener('mousedown', function (e) {
         e.preventDefault();
         autoBox.children[0].value = weightedOption.target;
-        autoBox.keyup();
       });
       listItem.addEventListener('mouseup', function () {
         autoBox.children[0].blur();
