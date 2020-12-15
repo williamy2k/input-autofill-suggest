@@ -1,0 +1,61 @@
+.autoBox input {
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid lightgrey;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px rgb(235, 235, 235);
+  transition: box-shadow 0.2s;
+}
+
+.autoBox input:hover {
+  box-shadow: 0px 1px 4px rgb(220, 220, 220);
+}
+
+.autoBox input:focus {
+  box-shadow: 0px 1px 6px rgb(220, 220, 220);
+}
+
+.autoBox {
+  position: relative;
+}
+
+.autoBox ul {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  width: 260px;
+  margin-top: 0;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgb(220, 220, 220);
+  margin-left: 2px;
+  padding: 4px 0;
+  max-height: 200px;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s, top 0.4s, left 0.4s;
+  transform: scale(0);
+  top: -85px;
+  left: -45px;
+  z-index: 0;
+}
+
+.autoBox ul.autoBox-visible {
+  top: 42px;
+  left: 0;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+.autoBox ul li {
+  list-style-type: none;
+  padding: 4px 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.autoBox ul li:hover {
+  background-color: rgb(245, 245, 245);
+}
