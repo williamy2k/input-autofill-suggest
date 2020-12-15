@@ -2,6 +2,8 @@
 
 List of options or suggestions which appears when an `<input>` is focussed.
 
+<img src="https://i.ibb.co/kHPZS3q/Untitled-1-dragged.png" width="200" alt="Screenshot of an input box with input autofill suggest options showing below">
+
 ## Usage
 
     <div class="autoBox">
