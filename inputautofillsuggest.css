@@ -1,4 +1,4 @@
-.autoBox input {
+.inputAutoSuggAutoBox input {
   font-size: 14px;
   padding: 8px 10px;
   border: 1px solid lightgrey;
@@ -8,19 +8,19 @@
   transition: box-shadow 0.2s;
 }
 
-.autoBox input:hover {
+.inputAutoSuggAutoBox input:hover {
   box-shadow: 0px 1px 4px rgb(220, 220, 220);
 }
 
-.autoBox input:focus {
+.inputAutoSuggAutoBox input:focus {
   box-shadow: 0px 1px 6px rgb(220, 220, 220);
 }
 
-.autoBox {
+.inputAutoSuggAutoBox {
   position: relative;
 }
 
-.autoBox ul {
+.inputAutoSuggAutoBox ul {
   position: absolute;
   background: rgb(255, 255, 255);
   width: 260px;
@@ -40,7 +40,7 @@
   z-index: 0;
 }
 
-.autoBox ul.autoBox-visible {
+.inputAutoSuggAutoBox ul.inputAutoSuggAutoBox-visible {
   top: 42px;
   left: 0;
   transform: scale(1);
@@ -48,7 +48,7 @@
   z-index: 1;
 }
 
-.autoBox ul li {
+.inputAutoSuggAutoBox ul li {
   list-style-type: none;
   padding: 4px 10px;
   font-family: sans-serif;
@@ -56,6 +56,6 @@
   cursor: pointer;
 }
 
-.autoBox ul li:hover {
+.inputAutoSuggAutoBox ul li:hover {
   background-color: rgb(245, 245, 245);
 }
