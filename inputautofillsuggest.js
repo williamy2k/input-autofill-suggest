@@ -46,7 +46,7 @@ function inputAutofillSugOptionsList(autoBox, autofilldata, extractionFunc) {
 
 function inputAutofillSug(autoBox, options) {
 
-
+  autoBox.classList.add('inputAutoSuggAutoBox');
   let list = document.createElement('ul');
   options.forEach(option => {
     let listItem = document.createElement('li');
@@ -95,9 +95,9 @@ function inputAutofillSug(autoBox, options) {
   });
 
   autoBox.children[0].addEventListener('focus', function () {
-    autoBox.children[1].classList.add('autoBox-visible');
+    autoBox.children[1].classList.add('inputAutoSuggAutoBox-visible');
   });
   autoBox.children[0].addEventListener('blur', function () {
-    autoBox.children[1].classList.remove('autoBox-visible');
+    autoBox.children[1].classList.remove('inputAutoSuggAutoBox-visible');
   });
 }
