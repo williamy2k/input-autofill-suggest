@@ -48,6 +48,8 @@ Requires you to supply:
 
 ### Multiple Boxes
 
+Only supports providing options as `data-options` attribute.
+
     <div class="my-auto-input-boxes">
       <input data-options="Red, Blue, Green, Yellow">
     </div>
