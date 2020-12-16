@@ -1,5 +1,51 @@
-document.querySelectorAll('.autoBox').forEach(autoBox => {
-  var options = autoBox.children[0].getAttribute('data-options').split(/[,]+/);
+Element.prototype.inputAutofillSuggest = function(autofilldata, extractionFunc) {
+  if(autofilldata == undefined) {
+    inputAutofillSugOptionsList(this, false);
+  } else {
+    inputAutofillSugOptionsList(this, autofilldata, extractionFunc);
+  }
+}
+
+NodeList.prototype.inputAutofillSuggest = function () {
+  this.forEach(item => {
+    inputAutofillSugOptionsList(item, false);
+  });
+}
+
+function inputAutofillSugOptionsList(autoBox, autofilldata, extractionFunc) {
+  if (!autofilldata) {
+    var options = autoBox.children[0].getAttribute('data-options').split(/[,]+/);
+    inputAutofillSug(autoBox, options); // Go ahead using data attribute
+  } else {
+    if (Array.isArray(autofilldata)) {
+      var options = autofilldata;
+      inputAutofillSug(autoBox, options); // Go ahead using a provided array
+    } else {
+      let isUrl = new RegExp('^(https?:\\/\\/)?' + // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+        '(\\#[-a-z\\d_]*)?$', 'i').test(autofilldata);
+      if (isUrl) {
+        // load from url
+        console.log('Loading from URL');
+        console.log(autofilldata)
+        fetch(autofilldata)
+          .then(response => response.json())
+          .then(json => {
+            inputAutofillSug(autoBox, extractionFunc(json));
+          });
+        // Go ahead by fetching from a URL
+      } else {
+        console.log('Input Autofill Suggest Error: Unable to obtain a valid options listing as neither an array or URL was passed as an argument.');
+      }
+    }
+  }
+}
+
+function inputAutofillSug(autoBox, options) {
+
 
   let list = document.createElement('ul');
   options.forEach(option => {
@@ -38,6 +84,7 @@ document.querySelectorAll('.autoBox').forEach(autoBox => {
       listItem.addEventListener('mousedown', function (e) {
         e.preventDefault();
         autoBox.children[0].value = weightedOption.target;
+        autoBox.keyup();
       });
       listItem.addEventListener('mouseup', function () {
         if (autoBox.children[1].getBoundingClientRect().height == 210) autoBox.children[0].blur();
@@ -53,4 +100,4 @@ document.querySelectorAll('.autoBox').forEach(autoBox => {
   autoBox.children[0].addEventListener('blur', function () {
     autoBox.children[1].classList.remove('autoBox-visible');
   });
-});
+}
