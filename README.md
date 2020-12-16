@@ -68,7 +68,7 @@ Only supports providing options as `data-options` attribute.
 
 ## Setup
 
-Include the CSS in `<head>` (optional, you could adapt your own styles based on the `.autoBox` and `.autoBox-visible` classes):
+Include the CSS in `<head>` (optional, you could adapt your own styles based on the `.inputAutoSuggAutoBox` and `.inputAutoSuggAutoBox-visible` classes):
 
     <link href="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.css" rel="stylesheet">
 
