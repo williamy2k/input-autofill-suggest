@@ -70,9 +70,9 @@ Only supports providing options as `data-options` attribute.
 
 Include the CSS in `<head>` (optional, you could adapt your own styles based on the `.inputAutoSuggAutoBox` and `.inputAutoSuggAutoBox-visible` classes):
 
-    <link href="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.min.css" rel="stylesheet">
 
 Include at the end of `<body>`:
 
     <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/williamy2k/input-autofill-suggest/inputautofillsuggest.min.js"></script>
