@@ -48,7 +48,7 @@ function inputAutofillSug(autoBox, options) {
       autoBox.children[0].value = option;
     });
     listItem.addEventListener('mouseup', function () {
-      if (autoBox.children[1].getBoundingClientRect().height == 210) autoBox.children[0].blur();
+      if (autoBox.children[1].getBoundingClientRect().height >= autoBox.children[1].clientHeight) autoBox.children[0].blur();
     });
     list.appendChild(listItem);
   });
@@ -77,7 +77,7 @@ function inputAutofillSug(autoBox, options) {
         autoBox.children[0].value = weightedOption.target;
       });
       listItem.addEventListener('mouseup', function () {
-        if (autoBox.children[1].getBoundingClientRect().height == 210) autoBox.children[0].blur();
+        if (autoBox.children[1].getBoundingClientRect().height >= autoBox.children[1].clientHeight) autoBox.children[0].blur();
       });
       reorderedList.appendChild(listItem);
     });
